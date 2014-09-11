@@ -5,24 +5,35 @@ class Level(object):
         #TODO use inputs alternately load or create a level.
         pass
 
-    def createLevel(self):
-        level = 1
+    def createLevel(self, level):
+        level = level
         levelFileName = 'level' + str(level) + '.txt'
         # using 'w' to erase anything that might still be in a file
         levelFile = open(levelFileName, 'w')
         # for now just create an empty level with walls all around
         for i in range(24):
             for j in range(80):
-                if i == 1 or i == 24:
+                if i == 0 or i == 23:
                     line = '#' * 80 + '\n'
                 else:
                     line = '#' + ('.' * 78) + '#' + '\n'
             levelFile.write(line)
         levelFile.close()
 
+    def readLevel(self, level):
+        level = level
+        levelFileName = 'level' + str(level) + '.txt'
+        levelFile = open(levelFileName)
 
-    def printLevel(self):
-        pass
+
+
+    def printLevel(self, level):
+        level = level
+        levelFileName = 'level' + str(level) + '.txt'
+        levelFile = open(levelFileName)
+        for line in levelFile:
+            print(line)
+        levelFile.close()
 
 
 
