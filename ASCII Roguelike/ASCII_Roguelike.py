@@ -1,4 +1,9 @@
 import os
+import Level
+
+def main():
+    level = Level.Level()
+    level.createLevel()
 
 
 
@@ -6,5 +11,7 @@ import os
 
 
 
-if '__name__' == __main__:
-    print("you forgot to add the function call here")
+
+if __name__ == '__main__':
+    main()
+    
